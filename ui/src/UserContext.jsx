@@ -26,7 +26,7 @@ export function UserContextProvider({ children }) {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/profile', { withCredentials: true });
+        const response = await axios.get('http://localhost:8000/api/profile', { withCredentials: true });
         setId(response.data._id);
         setUserName(response.data.name);
       } catch (error) {

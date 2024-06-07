@@ -13,7 +13,7 @@ const LoginForm = ({ onRegisterClick }) => {
     e.preventDefault();
 
     try {
-      const { data } = await axios.post("http://localhost:5000/api/login", {
+      const { data } = await axios.post("http://localhost:8000/api/login", {
         email,
         password,
       });

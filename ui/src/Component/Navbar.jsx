@@ -6,7 +6,7 @@ const Navbar = () => {
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/profile", {
+        const response = await axios.get("http://localhost:8000/api/profile", {
           withCredentials: true, // Ensure that cookies are sent with the request
         });
 

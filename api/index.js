@@ -22,6 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
 app.use(cookieParser());
 const jwtSecret = process.env.JWT_SECRET_KEY;
 port = process.env.PORT || 5000;
+console.log(port)
 
 // Connecting to Database
 DataBaseConnection()

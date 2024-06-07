@@ -27,7 +27,7 @@ const Main = () => {
 
   ///Connect to wss again
   function connectToWs() {
-    const ws = new WebSocket("ws://localhost:5000");
+    const ws = new WebSocket("ws://localhost:8000");
     setWs(ws);
     ws.addEventListener("message", handleMessage);
     ws.addEventListener("close", () => {
@@ -87,7 +87,7 @@ const Main = () => {
   useEffect(() => {
     if (selectedUserId) {
       axios
-        .get("http://localhost:5000/api/messages/" + selectedUserId)
+        .get("http://localhost:8000/api/messages/" + selectedUserId)
         .then((e) => {
           setMessages(e.data);
         });
@@ -96,7 +96,7 @@ const Main = () => {
 
   /// All user or Online User
   useEffect(() => {
-    axios.get("http://localhost:5000/api/alluser").then((res) => {
+    axios.get("http://localhost:8000/api/alluser").then((res) => {
       const offlinePeopleArr = res.data
         .filter((p) => p._id !== id)
         .filter((p) => !Object.keys(onlinePeople).includes(p._id));
@@ -111,7 +111,7 @@ const Main = () => {
 
   //Logot User
   function logout() {
-    axios.post("http://localhost:5000/api/logout").then(() => {
+    axios.post("http://localhost:8000/api/logout").then(() => {
       setId(null);
       setUserName(null);
       setWs(null);
